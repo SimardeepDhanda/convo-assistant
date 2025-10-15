@@ -26,22 +26,6 @@ A Next.js application that helps users practice conversations with AI personas i
 4. **End Session**: Click "End Session & Get Feedback" to receive detailed coaching feedback
 5. **Start Over**: Begin a new conversation with a different scenario
 
-## Deployment
-
-This app is ready for deployment on Vercel:
-
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Deploy on Vercel**
-   - Connect your GitHub repository to Vercel
-   - In Vercel dashboard, go to Settings → Environment Variables
-   - Add `OPENAI_API_KEY` with your actual API key value
-   - Deploy!
 
 ## Personas
 
@@ -49,17 +33,5 @@ This app is ready for deployment on Vercel:
 - **Direct**: Blunt, concise, goal-oriented
 - **Skeptical**: Challenges ideas, asks tough questions
 - **Busy Executive**: Impatient, wants clarity
-- **Spiky**: Curt and cold but professional
+- **Impatient**: Curt and cold but professional
 
-## Future Enhancements
-
-- User accounts with saved transcripts
-- Lesson mode with guided challenges
-- Progress tracking
-- Multilingual support
-- Custom coach personas
-- Fine-tuning capabilities
-
-## License
-
-MIT License
