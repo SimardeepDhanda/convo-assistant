@@ -235,20 +235,20 @@ export default function Home() {
       
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
-      setIsPlaying(true);
+      // Audio started playing
       
       audio.onended = () => {
-        setIsPlaying(false);
+        // Audio finished playing
       };
       
       audio.onerror = () => {
-        setIsPlaying(false);
+        // Audio error occurred
       };
       
       await audio.play();
     } catch (error) {
       console.error('Error playing audio:', error);
-      setIsPlaying(false);
+      // Audio error occurred
     }
   };
 
