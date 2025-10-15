@@ -14,7 +14,11 @@ export async function POST(request: NextRequest) {
     }
 
     if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json({ error: 'OpenAI API key not configured' }, { status: 500 });
+      // Demo mode - return a sample response
+      return NextResponse.json({
+        message: "Hello! I'm in demo mode. To get real AI responses, please add your OpenAI API key to the environment variables.",
+        audioUrl: null
+      });
     }
 
     const personaPrompt = getPersonaPrompt(scenario.persona);
@@ -26,9 +30,9 @@ Goal: ${scenario.goal}
 
 You are roleplaying as the specified persona in this scenario. Respond naturally and stay in character. Keep responses conversational and appropriate for the context.`;
 
-    const openaiMessages = [
+    const openaiMessages: Array<{role: 'system' | 'user' | 'assistant', content: string}> = [
       { role: 'system', content: systemPrompt },
-      ...messages.map((msg: any) => ({
+      ...messages.map((msg: {role: string, content: string}) => ({
         role: msg.role,
         content: msg.content,
       })),
@@ -36,7 +40,7 @@ You are roleplaying as the specified persona in this scenario. Respond naturally
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o',
-      messages: openaiMessages as any,
+      messages: openaiMessages,
       max_tokens: 500,
       temperature: 0.8,
     });

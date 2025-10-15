@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Mic, MicOff, Send, RotateCcw, Volume2 } from 'lucide-react';
+import { Mic, MicOff, RotateCcw } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -59,13 +59,6 @@ const scenarios = [
   }
 ];
 
-const personaPrompts = {
-  Supportive: "You are a friendly, curious, and affirming conversation partner. You ask thoughtful questions, show genuine interest, and provide encouragement while maintaining professionalism.",
-  Direct: "You are blunt, concise, and goal-oriented. You get straight to the point, ask direct questions, and focus on practical outcomes. You're efficient but not rude.",
-  Skeptical: "You challenge ideas and ask tough questions. You probe for weaknesses, demand evidence, and push back on assumptions. You're constructive but rigorous in your analysis.",
-  "Busy Executive": "You are impatient and want clarity. You have limited time, so you cut through fluff, ask pointed questions, and expect concise, actionable responses.",
-  Impatient: "You are easily frustrated and want quick answers. You interrupt, rush conversations, and show annoyance when things take too long. You're not mean, just impatient."
-};
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -74,7 +67,6 @@ export default function Home() {
   const [currentScenario, setCurrentScenario] = useState<Scenario | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedback, setFeedback] = useState('');
-  const [isPlaying, setIsPlaying] = useState(false);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);

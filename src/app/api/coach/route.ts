@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     }
 
     const conversationText = messages
-      .map((msg: any) => `${msg.role === 'user' ? 'You' : 'AI'}: ${msg.content}`)
+      .map((msg: {role: string, content: string}) => `${msg.role === 'user' ? 'You' : 'AI'}: ${msg.content}`)
       .join('\n');
 
     const coachPrompt = `You are a conversation coach analyzing a practice session. 

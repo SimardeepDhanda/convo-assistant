@@ -15,7 +15,10 @@ export async function POST(request: NextRequest) {
     }
 
     if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json({ error: 'OpenAI API key not configured' }, { status: 500 });
+      // Demo mode - return sample transcription
+      return NextResponse.json({
+        text: "Demo mode: Your speech would be transcribed here with a real API key."
+      });
     }
 
     // Convert File to Buffer
