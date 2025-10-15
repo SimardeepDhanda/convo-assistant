@@ -5,7 +5,7 @@ A Next.js application that helps users practice conversations with AI personas i
 ## Features
 
 - **Scenario Setup**: Choose from predefined scenarios or create your own
-- **AI Personas**: Practice with different personality types (Supportive, Direct, Skeptical, Busy Executive, Spiky)
+- **AI Personas**: Practice with different personality types (Supportive, Direct, Skeptical, Busy Executive, Impatient)
 - **Voice Input**: Hold-to-talk microphone input with Whisper transcription
 - **Text-to-Speech**: AI responses are spoken aloud using OpenAI TTS
 - **Conversation Analysis**: Get detailed feedback on your conversation skills
@@ -17,55 +17,14 @@ A Next.js application that helps users practice conversations with AI personas i
 - **AI**: OpenAI GPT-4o, Whisper, Text-to-Speech
 - **Deployment**: Vercel-ready
 
-## Setup
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd convo-assistant
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   
-   Copy the example environment file:
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Then edit `.env.local` and add your OpenAI API key:
-   ```env
-   OPENAI_API_KEY=sk-your-actual-api-key-here
-   ```
-   
-   **Get your API key**: Visit https://platform.openai.com/account/api-keys
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Usage
 
 1. **Choose a Scenario**: Either type your own scenario or click "Randomize Scenario" to get a random one
-2. **Start Chatting**: Use the text input or hold the microphone button to speak
+2. **Start Chatting**: Hold the microphone button to speak
 3. **Listen to Responses**: AI responses are automatically spoken aloud
 4. **End Session**: Click "End Session & Get Feedback" to receive detailed coaching feedback
 5. **Start Over**: Begin a new conversation with a different scenario
-
-## API Endpoints
-
-- `POST /api/chat` - Main conversation endpoint
-- `POST /api/transcribe` - Speech-to-text using Whisper
-- `POST /api/tts` - Text-to-speech generation
-- `POST /api/coach` - Conversation analysis and feedback
 
 ## Deployment
 
